@@ -3,6 +3,7 @@ import React from 'react';
 function App() {
   return (
     <div className='App'> 
+    <h1>Portfolio App</h1>
     </div> 
   );
 }
