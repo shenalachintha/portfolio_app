@@ -19,13 +19,13 @@ const Main = () => {
                         <LinkedIn className='icon'/>
                     </div>
                     <div className='buttons'>
-                         <button>See Me</button>
-                    <button >Hire Me</button>
+                        <button className='btn btn-primary'>See Me</button>
+                        <button className='btn btn-secondary'>Hire Me</button>
                     </div>
                 </div>
-            </div>
-            <div className='main_img'>
-                <img src={portfolioImage} alt='Portfolio' style={{maxWidth: '200px', width: '100%'}}/> 
+                <div className='main_img'>
+                    <img src={portfolioImage} alt='Portfolio' style={{borderRadius: '20px'}}/> 
+                </div>
             </div>
         </div>
     </div>

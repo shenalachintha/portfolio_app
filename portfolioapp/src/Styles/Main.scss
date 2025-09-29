@@ -204,12 +204,12 @@ $border-radius: 8px;
       &::before {
         content: '';
         position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
         background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
-        border-radius: 50%;
+        border-radius: 25px; // Rounded corners instead of circle
         opacity: 0.3;
         animation: rotate 10s linear infinite;
         z-index: 1;
@@ -217,11 +217,11 @@ $border-radius: 8px;
 
       img {
         width: 100% !important;
-        max-width: 150px !important; // Very small for testing
+        max-width: 350px !important; // Increased size for better visibility
         height: auto !important;
-        border-radius: 50% !important;
+        border-radius: 20px !important; // Rounded corners
         box-shadow: $shadow;
-        border: 8px solid rgba(255, 255, 255, 0.2);
+        border: 6px solid rgba(255, 255, 255, 0.3);
         position: relative;
         z-index: 2;
         transition: all 0.3s ease;
@@ -229,6 +229,7 @@ $border-radius: 8px;
         &:hover {
           transform: scale(1.05);
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+          border-radius: 25px !important; // Slightly more rounded on hover
         }
       }
     }
@@ -290,7 +291,8 @@ $border-radius: 8px;
         order: 1;
 
         img {
-          max-width: 250px; // Reduced from 300px to 250px for tablet
+          max-width: 280px !important; // Increased size for tablet
+          border-radius: 18px !important; // Maintain rounded corners
         }
       }
     }
@@ -312,7 +314,8 @@ $border-radius: 8px;
 
       .main_img {
         img {
-          max-width: 200px; // Reduced from 250px to 200px for mobile
+          max-width: 240px !important; // Increased size for mobile
+          border-radius: 15px !important; // Maintain rounded corners on mobile
         }
       }
     }
