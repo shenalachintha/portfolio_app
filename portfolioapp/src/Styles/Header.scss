@@ -1,36 +1,78 @@
+
 .header{
     width: 100%;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     
 }
 .header-logo{
     margin-left: 4rem;
 
+    h1 {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+    }
 }
-.navbar{
-  margin: 0 auto;
-}
-ul{
-    display: flex;
-    li{
-        list-style: none;
-        margin: 0 1rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        a{
-            text-decoration: none;
-            color: #000;
-            text-transform: uppercase;
-            &:hover{
-                border-bottom: 3px solid red;
-                transform: scale(1.1);
+nav {
+    margin: 0 auto;
+    
+    ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        
+        li{
+            list-style: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            a{
+                text-decoration: none;
+                color: #2c3e50;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                position: relative;
+                padding: 0.5rem 0;
+                
+                b {
+                    font-weight: 700;
+                }
+                
+                &:hover{
+                    color: #3498db;
+                    transform: translateY(-2px);
+                }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #3498db;
+                    transition: width 0.3s ease;
+                }
+                
+                &:hover::after {
+                    width: 100%;
+                }
             }
         }
-    };
+    }
 }
 .change{
     display: flex;

@@ -1,0 +1,320 @@
+// Main Portfolio Section Styles
+// ==============================================
+
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$text-color: #333;
+$light-text: #7f8c8d;
+$white: #ffffff;
+$gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+// Main Container
+.main {
+  min-height: 100vh;
+  background: $gradient-bg;
+  padding: 120px 20px 20px; // Increased top padding for fixed header
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  // Background decoration
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; // Increased from 60px to 80px for more space between columns
+    align-items: center;
+
+    // Text Content Section
+    .text {
+      color: $white;
+
+      p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        font-weight: 300;
+
+        &:first-child {
+          font-size: 20px;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 500;
+        }
+
+        &:last-of-type {
+          font-size: 22px;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 30px;
+          font-weight: 400;
+        }
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin: 20px 0;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        span {
+          color: #ffd700;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            border-radius: 2px;
+          }
+        }
+      }
+
+      // Social Icons
+      .icons {
+        display: flex;
+        gap: 20px;
+        margin: 30px 0;
+
+        .icon {
+          font-size: 28px;
+          color: rgba(255, 255, 255, 0.8);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 12px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+
+          &:hover {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+          }
+        }
+      }
+
+      // Buttons Section
+      .buttons {
+        display: flex;
+        gap: 20px;
+        margin-top: 60px; // Increased from 40px to 60px for more space
+        margin-bottom: 30px; // Added bottom margin for better spacing
+
+        .btn,
+        button {
+          padding: 15px 30px;
+          border: none;
+          border-radius: $border-radius;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+          }
+
+          &:hover::before {
+            left: 100%;
+          }
+
+          &.btn-primary,
+          &:first-child {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: $primary-color;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+            }
+          }
+
+          &.btn-secondary,
+          &:last-child {
+            background: transparent;
+            color: $white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+              border-color: #ffd700;
+              color: #ffd700;
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+
+    // Image Section
+    .main_img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: rotate 10s linear infinite;
+        z-index: 1;
+      }
+
+      img {
+        width: 100% !important;
+        max-width: 150px !important; // Very small for testing
+        height: auto !important;
+        border-radius: 50% !important;
+        box-shadow: $shadow;
+        border: 8px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .main {
+    padding: 60px 15px 15px;
+
+    .main-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+
+      .text {
+        order: 2;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .buttons {
+          flex-direction: column;
+          align-items: center;
+          margin-top: 50px; // Added margin for mobile
+          margin-bottom: 40px; // Added bottom margin for mobile
+
+          .btn,
+          button {
+            width: 200px;
+          }
+        }
+      }
+
+      .main_img {
+        order: 1;
+
+        img {
+          max-width: 250px; // Reduced from 300px to 250px for tablet
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    .main-content {
+      .text {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .icons {
+          justify-content: center;
+        }
+      }
+
+      .main_img {
+        img {
+          max-width: 200px; // Reduced from 250px to 200px for mobile
+        }
+      }
+    }
+  }
+}
